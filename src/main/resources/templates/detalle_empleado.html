@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con Thymeleaf y Bootstrap</title>
+    <!-- Estilos de Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Detalle del Empleado</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" th:text="'Nombre: ' + ${empleado.nombreEmpleado}">No existe</h5>
+                <p class="card-text" th:text="'DNI Empleado: '+ ${empleado.dni_empleado}"></p>
+                <p class="card-text" th:text="'Apellido: '+ ${empleado.apellidoEmpleado}"></p>
+                <p class="card-text" th:text="'Fecha Nacimiento: '+ ${empleado.fechaNacimiento}"></p>
+                <p class="card-text" th:text="'Direccion: '+ ${empleado.direccion}"></p>
+                <p class="card-text" th:text="'Correo: '+ ${empleado.correo}"></p>
+                <p class="card-text" th:text="'Area: ' + ${empleado.areaEntity.nombreArea}"></p>
+                
+                <a th:href="@{/empleado/}" class="btn btn-secondary">Regresar</a>
+                <a th:href="@{/delete/{id}(id=${empleado.empleadoId})}" class="btn btn-danger" 
+                   onclick="return confirm('¿Estás seguro de que quieres eliminar este empleado?');">Eliminar</a>
+
+                
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
