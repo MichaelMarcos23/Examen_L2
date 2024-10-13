@@ -21,7 +21,7 @@
                 <p class="card-text" th:text="'Area: ' + ${empleado.areaEntity.nombreArea}"></p>
                 
                 <a th:href="@{/empleado/}" class="btn btn-secondary">Regresar</a>
-                <a th:href="@{/delete/{id}(id=${empleado.empleadoId})}" class="btn btn-danger" 
+                <a th:href="@{/empleado/delete/{id}(id=${empleado.empleadoId})}" class="btn btn-danger" 
                    onclick="return confirm('¿Estás seguro de que quieres eliminar este empleado?');">Eliminar</a>
 
                 
